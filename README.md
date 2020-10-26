@@ -2,12 +2,12 @@
 
 > Use this module to get countdown timer by given date.
 
-[![NPM](https://img.shields.io/npm/v/count-down-timer-react.svg)](https://www.npmjs.com/package/count-down-timer-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/count-down-timer-react.svg)](https://www.npmjs.com/package/@nilevia/count-down-timer-react) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save count-down-timer-react
+npm install --save @nilevia/count-down-timer-react
 ```
 
 ## Features
@@ -49,6 +49,17 @@ const App = () => {
       secondAffix="sec"
       className="light-blue bold font-muli-20"
     />
+
+    <CountDownDaily
+      endDate={"2020-10-30T06:50:17.346Z"}
+      dayAffix="Day"
+      hourAffix="Hour"
+      minutesAffix="Minutes"
+      secondAffix="Second"
+      className="red font-muli-20"
+      operator=" "
+    />
+
   </div>
   )
 }
@@ -56,6 +67,8 @@ const App = () => {
 export default App
 
 ```
+
+![demo](https://github.com/nilevia/count-down-timer-react/blob/master/image/demo.gif)
 
 
 ## On Work
