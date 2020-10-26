@@ -10,20 +10,58 @@
 npm install --save count-down-timer-react
 ```
 
-## Usage
+## Features
+- Countdown Dourly ``12 : 34 : 01``
+- Countdown Daily ``01 : 12 : 11 : 23``
+- Custom Affix ``12 Hr 34 Day 01 Sec``
+- Custom Operator ``12 - 02 - 59``
+- Customable Style Using ``className``
 
-```jsx
-import React, { Component } from 'react'
+## Example
+```jsx harmony
+import React from 'react'
 
-import MyComponent from 'count-down-timer-react'
+import { CountDownHourly, CountDownDaily } from 'count-down-timer-react'
 import 'count-down-timer-react/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return(
+  <div className="txt-center-hoz">
+
+    <CountDownHourly
+      endDate={"2020-10-08T06:50:18.346Z"}
+    />
+
+    <CountDownDaily
+      endDate={"2020-10-08T06:50:18.346Z"}
+      dayAffix="Hari"
+      hourAffix="Jam"
+      minutesAffix="Menit"
+      secondAffix="Detik"
+      operator="-"
+    />
+
+    <CountDownDaily
+      endDate={"2020-10-08T06:50:18.346Z"}
+      dayAffix="day"
+      hourAffix="hrs"
+      minutesAffix="min"
+      secondAffix="sec"
+      className="light-blue bold font-muli-20"
+    />
+  </div>
+  )
 }
+
+export default App
+
 ```
+
+
+## On Work
+
+Add on expired time callback.
+
 
 ## License
 
