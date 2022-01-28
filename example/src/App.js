@@ -17,7 +17,7 @@ const App = () => {
     <br/>
     Countdown daily with affix and custom operator
     <CountDownDaily
-      endDate={"2022-01-27T16:46:18.346Z"}
+      endDate={"2022-01-28T14:10:18.346Z"}
       dayAffix="Hari"
       hourAffix="Jam"
       minutesAffix="Menit"
