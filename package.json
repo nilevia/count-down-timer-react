@@ -1,6 +1,6 @@
 {
   "name": "@nilevia/count-down-timer-react",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Use this module to get countdown timer by given date.",
   "author": "nilevia",
   "license": "MIT",

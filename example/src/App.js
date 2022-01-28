@@ -4,6 +4,9 @@ import { CountDownHourly, CountDownDaily } from 'count-down-timer-react'
 import 'count-down-timer-react/dist/index.css'
 
 const App = () => {
+  const testFinish = () =>{
+    console.log("Finish")
+  }
   return(
   <div className="txt-center-hoz">
     Countdown hourly basic
@@ -14,13 +17,14 @@ const App = () => {
     <br/>
     Countdown daily with affix and custom operator
     <CountDownDaily
-      endDate={"2020-10-27T06:50:18.346Z"}
+      endDate={"2022-01-27T16:46:18.346Z"}
       dayAffix="Hari"
       hourAffix="Jam"
       minutesAffix="Menit"
       secondAffix="Detik"
       operator="-"
       className="bold"
+      onFinish={testFinish}
     />
     <br/>
     Countdown with custom style

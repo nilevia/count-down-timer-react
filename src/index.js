@@ -46,7 +46,6 @@ export class CountDownHourly extends Component {
   }
 
   getCountDownHourly(endDate) {
-    console.log(endDate)
     let diff = (Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000;
 
     // clear countdown when date is reached
@@ -92,7 +91,8 @@ export class CountDownDaily extends Component {
     hourAffix: PropTypes.string,
     minutesAffix: PropTypes.string,
     secondAffix: PropTypes.string,
-    className: PropTypes.string
+    className: PropTypes.string,
+    onFinish: PropTypes.func
 
   }
 
@@ -109,8 +109,10 @@ export class CountDownDaily extends Component {
       hourAffix: '',
       minutesAffix: '',
       secondAffix: '',
-      operator: ':'
+      operator: ':',
+      onFinish : {}
     }
+
   }
 
   componentDidMount() {
@@ -119,6 +121,7 @@ export class CountDownDaily extends Component {
     if (this.props.minutesAffix) this.setState({minutesAffix: this.props.minutesAffix});
     if (this.props.secondAffix) this.setState({secondAffix: this.props.secondAffix});
     if (this.props.operator) this.setState({operator: this.props.operator});
+    if (this.props.onFinish)  this.setState({onFinish: this.props.onFinish});
 
     this.interval = setInterval(() => {
       const date =  this.getCountDownHourly(this.props.endDate);
@@ -131,11 +134,13 @@ export class CountDownDaily extends Component {
   }
 
   getCountDownHourly(endDate) {
-    console.log(endDate)
     let diff = (Date.parse(new Date(endDate)) - Date.parse(new Date())) / 1000;
 
     // clear countdown when date is reached
-    if (diff < 0) return false;
+    if (diff < 0){
+      if (this.props.onFinish) this.props.onFinish()
+      return false;
+    }
 
     const timeLeft = {
       day: 0,

@@ -16,6 +16,7 @@ npm install --save @nilevia/count-down-timer-react
 - Custom Affix ``12 Hr 34 Day 01 Sec``
 - Custom Operator ``12 - 02 - 59``
 - Customable Style Using ``className``
+- On Finish Callback using ``onFinish``
 
 ## Example
 ```jsx harmony
@@ -25,6 +26,9 @@ import { CountDownHourly, CountDownDaily } from 'count-down-timer-react'
 import 'count-down-timer-react/dist/index.css'
 
 const App = () => {
+    const finishFunction = () =>{
+        console.log("im finish")
+    }
   return(
   <div className="txt-center-hoz">
 
@@ -39,6 +43,7 @@ const App = () => {
       minutesAffix="Menit"
       secondAffix="Detik"
       operator="-"
+      onFinish={finishFunction}
     />
 
     <CountDownDaily
@@ -70,10 +75,6 @@ export default App
 
 ![demo](https://github.com/nilevia/count-down-timer-react/blob/master/image/demo.gif)
 
-
-## On Work
-
-Add on expired time callback.
 
 
 ## License
